@@ -1,14 +1,22 @@
 <template>
   <div id="app">
+    <ZhihuDailyHead></ZhihuDailyHead>
     <img src="./assets/logo.png">
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import ZhihuDailyHead from './components/ZhihuDailyHead'
+require('basscss/css/basscss.min.css')
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    ZhihuDailyHead
+  }
 }
+
 </script>
 
 <style>
