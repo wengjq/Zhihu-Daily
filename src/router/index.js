@@ -1,15 +1,14 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import VueRouter from 'vue-router'
+import latest from '../components/latest'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Hello',
-      component: Hello
-    }
-  ]
+const routers = [
+  {path: '/', name: 'index', component: latest}
+]
+
+export default new VueRouter({
+  routers
 })
+

@@ -1,31 +1,41 @@
 <template>
-  <div id="app">
-    <ZhihuDailyHead></ZhihuDailyHead>
-    <img src="./assets/logo.png">
-    <router-view></router-view>
-  </div>
+    <div id="app" class="row">
+      <navbar></navbar>
+    </div>
 </template>
 
 <script>
-import ZhihuDailyHead from './components/ZhihuDailyHead'
-require('basscss/css/basscss.min.css')
+import navbar from './components/navbar'
 
 export default {
   name: 'app',
-  components: {
-    ZhihuDailyHead
+  components:{
+    "navbar": navbar
   }
 }
-
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  html,body{
+    height: 100%;
+    background-color: #f4f4f4;
+    ::selection {
+        color: #ba68c8;
+        background-color: #fff;
+    }
+    #app {
+      margin: 0;
+      font-family: Roboto,'Avenir', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      .app-loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+  }
 </style>
