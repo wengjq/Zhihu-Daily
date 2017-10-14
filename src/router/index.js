@@ -4,11 +4,12 @@ import latest from '../components/latest'
 
 Vue.use(VueRouter)
 
-const routers = [
-  {path: '/', name: 'index', component: latest}
+const routes = [
+  {path: '/', name: 'index', component: latest},
+  {path: '*', redirect: '/'}
 ]
 
 export default new VueRouter({
-  routers
+  routes
 })
 

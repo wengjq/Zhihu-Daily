@@ -1,6 +1,7 @@
 <template>
     <div id="app" class="row">
       <navbar></navbar>
+      <router-view></router-view>
     </div>
 </template>
 
@@ -16,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss">
-  html,body{
+  html,body {
     height: 100%;
     background-color: #f4f4f4;
     ::selection {
@@ -36,6 +37,9 @@ export default {
         bottom: 0;
         margin: auto;
       }
+    }
+    .indicators {
+      background: rgba(0, 157, 215, 0.2);
     }
   }
 </style>

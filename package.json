@@ -16,6 +16,7 @@
     "basscss": "^8.0.2",
     "express": "^4.15.2",
     "materialize-css": "^0.100.2",
+    "materialize-js": "^1.0.0",
     "toastr": "^2.1.2",
     "vue": "^2.2.1",
     "vue-router": "^2.2.0",

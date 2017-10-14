@@ -2,13 +2,14 @@
 	<div class="navbar">
 		<nav>
 		  <div class="nav-wrapper">
-		    <a href="#" class="brand-logo">
+		  	<router-link to='/' class="left brand-logo">
 		     <img class="app-logo" :src="logo" alt="知乎日报" title="首页">
-		    </a>
+		    </router-link>
 		    <ul id="nav-mobile" class="right hide-on-med-and-down">
-		      <li><a href="sass.html">Sass</a></li>
-		      <li><a href="badges.html">Components</a></li>
-		      <li><a href="collapsible.html">JavaScript</a></li>
+		      <li><a class="dropdown-button" data-activates="subjects">主题日报</a></li>
+          <li><a class="dropdown-button" data-activates="others">
+            <i class="material-icons">more_vert</i></a>
+          </li>
 		    </ul>
 		  </div>
 		</nav>
