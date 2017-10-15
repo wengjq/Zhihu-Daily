@@ -15,7 +15,7 @@
       <!-- top_stories -->
 	    <div class="col s12">
 		    <div class="carousel carousel-slider center" style="height: 640px;" data-indicators="true">
-			    <div class="carousel-item white-text" :key="topStory.id"  v-for="topStory of topStories">
+			    <router-link :to="{name: 'story', params: {id: topStory.id }}" class="carousel-item white-text" :key="topStory.id"  v-for="topStory of topStories">
 		        <div class="card horizontal">
 		          <div class="card-image waves-effect waves-block waves-light">
 		            <img :src="topStory.image | imageUrlPrefix">
@@ -26,10 +26,27 @@
 			        	</div>
 				    	</div>
 		        </div>
-			    </div>
+			    </router-link>
 				</div>
-      </div>
-      <div class="col s12">
+				<div class="divider"></div>
+	      <div class="s12">
+	        <nav class="purple lighten-2">
+	          <div class="nav-wrapper app-change-date">
+	            <i class="left large material-icons app-date-prev" @click="prev">keyboard_arrow_left</i>
+	            <span class="brand-logo center flow-text app-date">{{ this.date }}</span>
+	            <i class="right large material-icons app-date-next" @click="next">keyboard_arrow_right</i>
+	          </div>
+	        </nav>
+	      </div>
+	      <!-- stories -->
+        <router-link class="s12" :key="story.id" :to="{name: 'story', params: {id: story.id }}" v-for="story of stories">
+          <div class="card horizontal hoverable">
+            <div class="card-image"><img :src="story.images[0] | imageUrlPrefix"></div>
+            <div class="card-stacked">
+              <div class="card-content"><p class="flow-text">{{ story.title }}</p></div>
+            </div>
+          </div>
+        </router-link>
       </div>
     </div>
 	</div>
@@ -82,16 +99,25 @@ export default {
                     })
       }
     },
+    getStoriesBydate () {
+      const date = new Date().getDate();
+      if (parseInt(('' + this.date).slice(-2)) > date) {
+        return;
+      } else {
+        this.$http.get(`${this.$url}/api/4/news/before/${this.date}`)
+                      .then(res => {
+                          this.stories = res.data.stories
+                      })
+                      .catch(e => {
+                        console.log(e)
+                    })
+      }
+    },
     prev () {
       this.date -= 1
     },
     next () {
       this.date += 1
-    },
-    mounted () {
-    	this.$nextTick(() => {
-
-    	});
     }
   }
 }
@@ -109,26 +135,19 @@ export default {
     	color: #009dd7 !important;
     }
     .carousel-slider {
-    	max-height: 600px;
+    	max-height: 640px;
     }
     .card-content {
     	font-size: 24px;
     	font-weight: 300;
     }
-    .top-stories-list, .stories-list {
-      position: relative;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: center;
-      .top-story-item,.story-item{
-        color: #ba68c8;
-        flex: 1 0 auto;
-      }
+    .divider {
+    	height: 10px;
     }
     .app-change-date {
       display: flex;
       justify-content: space-around;
+      background-color: #009dd7 !important;
       .app-date-prev,.app-date-next {
         display: block;
         width: 100px;

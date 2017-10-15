@@ -31,7 +31,7 @@ export default {
 <style lang="scss" scoped>
 .navbar {
 	.app-logo {
-	  padding-top: 10px;
+	  padding-bottom: 5px;
 	  padding-left: 10px;
 	}
 	nav {
