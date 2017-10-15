@@ -29,17 +29,15 @@
 			    </router-link>
 				</div>
 				<div class="divider"></div>
-	      <div class="s12">
-	        <nav class="purple lighten-2">
-	          <div class="nav-wrapper app-change-date">
-	            <i class="left large material-icons app-date-prev" @click="prev">keyboard_arrow_left</i>
-	            <span class="brand-logo center flow-text app-date">{{ this.date }}</span>
-	            <i class="right large material-icons app-date-next" @click="next">keyboard_arrow_right</i>
-	          </div>
-	        </nav>
-	      </div>
+        <nav class="purple lighten-2">
+          <div class="nav-wrapper app-change-date">
+            <i class="left large material-icons app-date-prev" @click="prev">keyboard_arrow_left</i>
+            <span class="brand-logo center flow-text app-date">{{ this.date }}</span>
+            <i class="right large material-icons app-date-next" @click="next">keyboard_arrow_right</i>
+          </div>
+        </nav>
 	      <!-- stories -->
-        <router-link class="s12" :key="story.id" :to="{name: 'story', params: {id: story.id }}" v-for="story of stories">
+        <router-link  :key="story.id" :to="{name: 'story', params: {id: story.id }}" v-for="story of stories">
           <div class="card horizontal hoverable">
             <div class="card-image"><img :src="story.images[0] | imageUrlPrefix"></div>
             <div class="card-stacked">

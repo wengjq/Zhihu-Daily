@@ -53,11 +53,11 @@
       </div>
       <!-- actions -->
       <div class="story-actions">
-         <a class="btn-floating btn-large waves-effect waves-light purple lighten-2" @click="removeFavoriteStory" v-if="favorite"><i class="material-icons">favorite</i></a>
+         <a class="btn-floating btn-large waves-effect waves-light" @click="removeFavoriteStory" v-if="favorite"><i class="material-icons">favorite</i></a>
 
-         <a class="btn-floating btn-large waves-effect waves-light purple lighten-2" @click="addFavoriteStory" v-else="favorite"><i class="material-icons">favorite_border</i></a>
+         <a class="btn-floating btn-large waves-effect waves-light" @click="addFavoriteStory" v-else="favorite"><i class="material-icons">favorite_border</i></a>
          <!-- 返回上级按钮 -->
-         <a class="btn-floating btn-large waves-effect waves-light purple lighten-2"><i class="material-icons" @click="goBack">keyboard_return</i></a>
+         <a class="btn-floating btn-large waves-effect waves-light"><i class="material-icons" @click="goBack">keyboard_return</i></a>
       </div>
     </div>    
 	</div>	
@@ -155,12 +155,15 @@ export default {
   .story {
     min-height: 100vh;
     padding-bottom: 50px;
-    .margin-left{
+    .btn-floating {
+    	background: #009dd7;
+    }
+    .margin-left {
       margin-left: 12px;
     }
     .comments {
       padding: 12px 12px;
-      .comment-info{
+      .comment-info {
         font-size: 18px;
       }
       .comment-content {
@@ -178,7 +181,7 @@ export default {
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      .material-icons{
+      .material-icons {
         font-size: 30px;
       }
     }

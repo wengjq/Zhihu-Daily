@@ -2,16 +2,19 @@
     <div id="app" class="row">
       <navbar></navbar>
       <router-view></router-view>
+      <footbar></footbar>
     </div>
 </template>
 
 <script>
 import navbar from './components/navbar'
+import footbar from './components/footbar'
 
 export default {
   name: 'app',
   components:{
-    "navbar": navbar
+    "navbar": navbar,
+    "footbar": footbar
   }
 }
 </script>
