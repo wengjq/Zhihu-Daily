@@ -2,6 +2,8 @@
 
 > 知乎日报
 
+> [demo address](https://wengjq.github.io/GithubPage/Zhihu-Daily)
+
 ## Build Setup
 
 ``` bash
